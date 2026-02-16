@@ -1,7 +1,9 @@
+// js/main.js
 import { initLearning } from './learning.js';
+import { initQuiz } from './quiz.js';          // 추가됨
+import { initDashboard } from './dashboard.js'; // 추가됨
 import { switchTab } from './ui.js';
 
-// 앱 시작점
 document.addEventListener('DOMContentLoaded', () => {
     console.log("🚀 App Initializing...");
 
@@ -10,25 +12,22 @@ document.addEventListener('DOMContentLoaded', () => {
     
     navButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            // data-target 속성 값 가져오기 (learning, quiz, dashboard)
             const target = e.currentTarget.dataset.target;
             
-            // 탭 전환 UI
+            // 탭 UI 전환
             switchTab(target);
             
-            // 탭별 로직 실행
+            // 탭별 기능 실행
             if (target === 'learning') {
-                // 필요하면 여기서 다시 로드하거나 상태 유지
+                // 학습 모드는 상태 유지를 위해 재로딩 안 함 (필요시 initLearning 호출)
             } else if (target === 'quiz') {
-                alert("퀴즈 모드는 다음 업데이트에 추가됩니다!");
-                // initQuiz();
+                initQuiz(); // 퀴즈 모드 진입 시 매번 새로 시작
             } else if (target === 'dashboard') {
-                alert("통계는 데이터를 더 쌓고 오세요!");
-                // initDashboard();
+                initDashboard(); // 대시보드 데이터 갱신
             }
         });
     });
 
-    // 2. 초기 화면 로드 (학습 모드)
+    // 2. 초기 화면 로드
     initLearning();
 });

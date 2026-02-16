@@ -51,13 +51,56 @@
 
 </section>
 
-        <section id="section-quiz" class="hidden">
-            <h1>Quiz Mode</h1>
-        </section>
+<section id="section-quiz" class="hidden">
+    <div class="quiz-header">
+        <h2 id="quiz-question-type">Meaning Quiz</h2>
+        <span id="quiz-score" style="color: var(--primary-color); font-weight: bold;">Score: 0</span>
+    </div>
 
-        <section id="section-dashboard" class="hidden">
-            <h1>Dashboard</h1>
-        </section>
+    <div class="card-container" style="height: auto; min-height: 200px; margin-bottom: 20px;">
+        <div class="card" style="box-shadow: none; border: 1px solid #eee;">
+            <div class="card-face card-front" style="justify-content: center;">
+                <h1 id="quiz-question-text" style="font-size: 2rem; margin: 0;">Question</h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="quiz-options" class="quiz-options-grid">
+        </div>
+
+    <div id="quiz-feedback" class="toast hidden" style="position: relative; top: 0; left: 0; transform: none; margin-top: 20px; background: #333;">
+        Feedback
+    </div>
+
+    <button id="btn-next-quiz" class="hidden" style="width: 100%; padding: 15px; margin-top: 20px; background: var(--primary-color); color: white; border: none; border-radius: 10px; font-size: 1.2rem;">
+        Next Question <i class="fas fa-arrow-right"></i>
+    </button>
+</section>
+
+<section id="section-dashboard" class="hidden">
+    <h2>Learning Status</h2>
+    
+    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+        <div style="flex: 1; background: white; padding: 15px; border-radius: 10px; text-align: center; box-shadow: var(--shadow);">
+            <div style="font-size: 2rem; color: var(--primary-color);" id="stat-total">0</div>
+            <div style="font-size: 0.8rem; color: #888;">Total Words</div>
+        </div>
+        <div style="flex: 1; background: white; padding: 15px; border-radius: 10px; text-align: center; box-shadow: var(--shadow);">
+            <div style="font-size: 2rem; color: #2ecc71;" id="stat-learned">0%</div>
+            <div style="font-size: 0.8rem; color: #888;">Completion</div>
+        </div>
+    </div>
+
+    <div style="background: white; padding: 20px; border-radius: 20px; box-shadow: var(--shadow);">
+        <canvas id="learningChart"></canvas>
+    </div>
+
+    <div style="margin-top: 20px; text-align: center;">
+        <button onclick="window.location.reload()" style="padding: 10px 20px; border: 1px solid #ddd; background: white; border-radius: 20px;">
+            <i class="fas fa-sync"></i> Refresh Data
+        </button>
+    </div>
+</section>
         
         <nav id="bottom-nav">
             <button data-target="learning"><i class="fas fa-layer-group"></i> 학습</button>

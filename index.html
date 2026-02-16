@@ -12,8 +12,44 @@
 
     <div id="app-container">
         <section id="section-learning" class="active">
-            <h1>Learning Mode</h1>
-        </section>
+    
+    <div style="text-align: center; margin-bottom: 10px; color: #888;">
+        <span id="progress-text">0 / 0</span>
+    </div>
+
+    <div class="card-container" id="card-container">
+        <div class="card" id="learning-card">
+            
+            <div class="card-face card-front">
+                <div style="font-size: 0.9rem; color: #888; margin-bottom: 5px;">
+                    <span id="card-pos">POS</span>
+                </div>
+                <h2 id="card-word">Loading...</h2>
+                <button id="btn-speak-front" class="btn-sound"><i class="fas fa-volume-up"></i></button>
+            </div>
+
+            <div class="card-face card-back">
+                <h3 id="card-meaning" style="margin-top:0;">Meaning</h3>
+                <p id="card-explanation" style="font-size: 0.9rem; color: #555;">Explanation</p>
+                <hr style="width: 50%; border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+                
+                <div id="card-sample" class="interactive-text" style="line-height: 1.6;">
+                    Sample sentence goes here.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="btn-unknown" class="btn-circle btn-unknown">
+            <i class="fas fa-times"></i>
+        </button>
+        <button id="btn-known" class="btn-circle btn-know">
+            <i class="fas fa-check"></i>
+        </button>
+    </div>
+
+</section>
 
         <section id="section-quiz" class="hidden">
             <h1>Quiz Mode</h1>

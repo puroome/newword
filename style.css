@@ -156,3 +156,22 @@ section.active { display: flex; flex-direction: column; }
     text-align: left; width: 100%; cursor: pointer;
 }
 .context-menu button:hover { background: #f0f0f0; }
+
+/* style.css 추가 */
+.quiz-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2열 배치 */
+    gap: 10px;
+}
+.quiz-btn {
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.quiz-btn:active { transform: scale(0.98); }
+.quiz-btn.correct { background: #d4edda; border-color: #c3e6cb; color: #155724; }
+.quiz-btn.wrong { background: #f8d7da; border-color: #f5c6cb; color: #721c24; }

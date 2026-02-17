@@ -61,9 +61,51 @@
         </section>
 
         <section id="study-page" class="page hidden">
-            <button class="home-btn">🏠 홈으로</button>
-            <h2>학습 화면 준비중...</h2>
-        </section>
+    <header class="study-header">
+        <button class="home-btn icon-btn">🏠</button>
+        <div class="progress-container">
+            <div class="progress-bar" id="study-progress"></div>
+            <span id="progress-text">1 / 100</span>
+        </div>
+        <button class="tts-settings-btn icon-btn">🇬🇧 UK</button>
+    </header>
+
+    <div class="card-container">
+        <div class="flashcard" id="flashcard">
+            
+            <div class="card-face card-front">
+                <div class="word-section">
+                    <h1 id="card-word">Loading...</h1>
+                    <span id="card-pos" class="pos-tag">n.</span>
+                </div>
+                <div class="meaning-section">
+                    <p id="card-meaning">잠시만 기다려주세요...</p>
+                    <p id="card-explanation" class="explanation"></p>
+                </div>
+                <button class="star-btn">☆</button>
+            </div>
+
+            <div class="card-face card-back">
+                <div class="example-section">
+                    <h3>Example</h3>
+                    <p id="card-example">예문이 없습니다.</p>
+                    <p id="card-ai-example" class="ai-example"></p>
+                </div>
+                <button id="ai-gen-btn" class="secondary-btn">🤖 AI 예문 생성</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="prev-btn" class="nav-btn">❮</button>
+        
+        <button id="flip-btn" class="cat-btn">
+            🐱 <span class="tooltip">뒤집기</span>
+        </button>
+        
+        <button id="next-btn" class="nav-btn">❯</button>
+    </div>
+</section>
     </div>
 
     <script src="js/config.js"></script>

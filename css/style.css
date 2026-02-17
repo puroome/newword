@@ -1,0 +1,118 @@
+/* css/style.css */
+:root {
+    --primary-color: #4285F4;
+    --bg-color: #f5f7fa;
+    --text-color: #333;
+    --card-bg: #ffffff;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    color: var(--text-color);
+}
+
+#app-container {
+    width: 100%;
+    max-width: 480px; /* 모바일 앱 느낌 */
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    position: relative;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.page {
+    display: none; /* 기본적으로 숨김 */
+    padding: 20px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.page.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 유틸리티 클래스 */
+.hidden { display: none !important; }
+
+/* 1. 로그인 페이지 스타일 */
+#login-page {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.google-btn {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.google-btn:hover { background-color: #f1f1f1; }
+.google-btn img { width: 18px; }
+
+/* 2. 메인 페이지 스타일 */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.content-wrapper { text-align: center; }
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.menu-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.menu-card:hover { transform: translateY(-3px); }
+
+.menu-card .icon { font-size: 2.5rem; margin-bottom: 10px; }
+.menu-card h3 { margin: 5px 0; font-size: 1.2rem; }
+.menu-card p { font-size: 0.8rem; color: #888; margin: 0; }
+
+.menu-card.small {
+    padding: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+#btn-stats { background-color: #20c997; } /* 민트색 */
+#btn-review { background-color: #fd7e14; } /* 주황색 */
+.menu-card.full { grid-column: span 2; }
+#btn-favorites { background-color: #fcc419; color: white; font-weight: bold; } /* 노란색 */
